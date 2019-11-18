@@ -5,11 +5,7 @@ class Show < ActiveRecord::Base
   end
 
   def self.most_popular_show
-    "SELECT * from shows WHERE rating = #{self.highest_rating}"
-
-
-    # self.highest_rating
-    # Show.select
+    Song.where(rating: self.highest_rating)
   end
 
   def self.lowest_rating
